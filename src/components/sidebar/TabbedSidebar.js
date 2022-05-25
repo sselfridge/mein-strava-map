@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
-import { makeStyles, Box, AppBar, Tabs, Tab } from "@material-ui/core";
+import { Box, AppBar, Tabs, Tab } from "@mui/material";
+
+import makeStyles from '@mui/styles/makeStyles';
 
 import ActivitiesTab from "./activities/ActivitiesTab.jsx";
 import EffortsTab from "./efforts/EffortsTab.jsx";

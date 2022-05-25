@@ -1,11 +1,11 @@
 import React from "react";
-import { ThemeProvider, createTheme } from "@material-ui/core/styles";
+import { ThemeProvider, StyledEngineProvider, createTheme, adaptV4Theme } from "@mui/material/styles";
 
-import { lightBlue, green } from "@material-ui/core/colors/";
+import { lightBlue, green } from "@mui/material/colors/";
 
 import App from "./App";
 
-const theme = createTheme({
+const theme = createTheme(adaptV4Theme({
   overrides: {
     MuiTab: {
       root: {
@@ -69,15 +69,17 @@ const theme = createTheme({
   status: {
     danger: "orange",
   },
-});
+}));
 
 theme.shape.borderRadius = theme.spacing(1.2);
 
 const ThemedApp = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 };
 
