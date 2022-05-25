@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import { Box, AppBar, Tabs, Tab } from "@mui/material";
 
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 
 import ActivitiesTab from "./activities/ActivitiesTab.jsx";
 import EffortsTab from "./efforts/EffortsTab.jsx";
@@ -17,10 +17,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   premiumIcon: {
-    height: theme.spacing(3),
-    width: theme.spacing(3),
-    float: "right",
-    marginRight: theme.spacing(3),
+    height: 24,
+    width: 24,
+    marginRight: 24,
+  },
+  premiumTab: {
+    display: "flex",
+    flexDirection: "row-reverse",
+    justifyContent: "space-between",
   },
 }));
 
@@ -107,6 +111,8 @@ export default function TabbedSidebar(props) {
           value={activeTab}
           onChange={handleChange}
           aria-label="simple tabs example"
+          textColor="black"
+          indicatorColor="secondary"
         >
           <Tab label="Activities" {...a11yProps(0)} />
           <Tab
@@ -118,6 +124,7 @@ export default function TabbedSidebar(props) {
                 alt="Strava Premium"
               />
             }
+            className={classes.premiumTab}
             onClick={() => setRenderKomTab((r) => r + 1)}
             {...a11yProps(1)}
           />

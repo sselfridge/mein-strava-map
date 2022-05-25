@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { Tooltip } from "@mui/material/";
 
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 
 import AllInclusiveRoundedIcon from "@mui/icons-material/AllInclusiveRounded";
 
@@ -41,8 +41,8 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
   },
   typeIcon: {
-    height: theme.spacing(1) * 3.5,
-    width: theme.spacing(1) * 3.5,
+    height: 8 * 3.5,
+    width: 8 * 3.5,
   },
   selectedIcon: {
     backgroundColor: "darkgray",
