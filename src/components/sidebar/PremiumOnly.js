@@ -1,7 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
-
-import { makeStyles } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
 import { sideBarHeight } from "../../constants/sidebar";
 const useStyles = makeStyles((theme) => ({
   root: {

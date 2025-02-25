@@ -7,9 +7,9 @@ import {
   AccordionSummary,
   AccordionDetails,
   Typography,
-  makeStyles,
-} from "@material-ui/core";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+} from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { getActivities } from "../../../api/strava";
 import List from "./List";
 import { sideBarHeight } from "../../../constants/sidebar";
@@ -182,7 +182,7 @@ export default function ActivitiesTab(props) {
       />
       {!activities[0] && !loading && (
         <div className={classes.fillerText}>
-          {"No activities found, change search parameters and try again"}
+          {"Click 'GET RIDES' to populate map"}
         </div>
       )}
       <List

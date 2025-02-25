@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { makeStyles, Tooltip } from "@material-ui/core/";
+import { Tooltip } from "@mui/material/";
 
-import AllInclusiveRoundedIcon from "@material-ui/icons/AllInclusiveRounded";
+import makeStyles from "@mui/styles/makeStyles";
+
+import AllInclusiveRoundedIcon from "@mui/icons-material/AllInclusiveRounded";
 
 const useStyles = makeStyles((theme) => ({
   activityType: {
@@ -39,8 +41,8 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
   },
   typeIcon: {
-    height: theme.spacing(1) * 3.5,
-    width: theme.spacing(1) * 3.5,
+    height: 8 * 3.5,
+    width: 8 * 3.5,
   },
   selectedIcon: {
     backgroundColor: "darkgray",

@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { withStyles } from "@material-ui/core/styles";
-import { InputLabel as MuiInputLabel } from "@material-ui/core";
+import withStyles from '@mui/styles/withStyles';
+import { InputLabel as MuiInputLabel } from "@mui/material";
 
 const InputLabel = withStyles((theme) => ({
   root: {

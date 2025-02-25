@@ -5,10 +5,10 @@ import {
   AccordionSummary,
   AccordionDetails,
   Typography,
-  makeStyles,
   CircularProgress,
-} from "@material-ui/core";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+} from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import dayjs from "../../../utils/dayjs";
 

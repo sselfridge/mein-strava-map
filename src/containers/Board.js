@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import _ from "lodash";
-import { makeStyles } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
 
 // import demoData from "../constants/DemoActivities";
 import MyMap from "../components/MyMap";

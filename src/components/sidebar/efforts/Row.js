@@ -2,19 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import dayjs from "../../../utils/dayjs";
-import MapIcon from "@material-ui/icons/Map";
-import RefreshIcon from "@material-ui/icons/Refresh";
+import MapIcon from "@mui/icons-material/Map";
+import RefreshIcon from "@mui/icons-material/Refresh";
 
-import {
-  makeStyles,
-  ListItem,
-  ListItemText,
-  ListItemAvatar,
-  IconButton,
-  Tooltip,
-} from "@material-ui/core/";
+import { ListItem, ListItemText, ListItemAvatar, IconButton, Tooltip } from "@mui/material/";
 
-import DeleteIcon from "@material-ui/icons/Delete";
+import makeStyles from '@mui/styles/makeStyles';
+
+import DeleteIcon from "@mui/icons-material/Delete";
 
 import { useRowStyles } from "../shared/styles";
 import { mergeStyles } from "../../../utils";
@@ -102,7 +97,7 @@ function Row(props) {
           >{`${effortCount} by ${athleteCount} riders`}</p>
           <div className={classes.actions}>
             <Tooltip title="View on Strava" placement={"top"}>
-              <IconButton>
+              <IconButton size="large">
                 <a href={stravaLink} rel="noopener noreferrer" target="_blank">
                   <img
                     className={classes.stravaIcon}
@@ -118,7 +113,7 @@ function Row(props) {
                 onClick={() => {
                   updateLeaderBoard(effort);
                 }}
-              >
+                size="large">
                 <RefreshIcon />
               </IconButton>
             </Tooltip>
@@ -128,7 +123,7 @@ function Row(props) {
                 onClick={() => {
                   centerMapOnActivity(effort);
                 }}
-              >
+                size="large">
                 <MapIcon />
               </IconButton>
             </Tooltip>
@@ -138,7 +133,7 @@ function Row(props) {
                 onClick={() => {
                   handleRemoveLine(selectedAct.id);
                 }}
-              >
+                size="large">
                 <DeleteIcon />
               </IconButton>
             </Tooltip>

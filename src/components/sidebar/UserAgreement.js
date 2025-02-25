@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import {
-  makeStyles,
-  Checkbox,
-  Button,
-  FormControlLabel,
-  TextField,
-} from "@material-ui/core";
+import { Checkbox, Button, FormControlLabel, TextField } from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
 import { initializeUser } from "../../api/strava";
 import { sideBarHeight } from "../../constants/sidebar";
 
