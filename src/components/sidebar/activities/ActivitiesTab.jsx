@@ -2,8 +2,13 @@ import React, { useRef, useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import dayjs from "../../../utils/dayjs";
 
-import { Accordion, AccordionSummary, AccordionDetails, Typography } from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Typography,
+} from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { getActivities } from "../../../api/strava";
 import List from "./List";

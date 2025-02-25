@@ -6,6 +6,8 @@ global._stravaAPI = require("./utils/stravaClient");
 const cookieParser = require("cookie-parser");
 const fs = require("fs");
 
+const axios = require("axios");
+
 const oAuthStrava = require("./controllers/oAuthStrava");
 const summaryController = require("./controllers/summaryStrava");
 const segmentController = require("./controllers/segmentsController");
@@ -32,6 +34,18 @@ var cron = require("node-cron");
 
 //Every morning at 04:01 am
 cron.schedule("01 04 * * *", () => {});
+
+app.use(function (req, res, next) {
+  if (!req.secure && process.env.NODE_ENV === "production") {
+    console.info("Redirect to https");
+    console.info(
+      "redirect to ",
+      ["https://", req.get("Host"), req.url].join("")
+    );
+    return res.redirect(["https://", req.get("Host"), req.url].join(""));
+  }
+  next();
+});
 
 // Every 15min
 // cron.schedule("*/15 * * * *", () => {
@@ -149,7 +163,7 @@ app.get(
 /*
 
 end points for setting up strava push notifications
-
+*/
 app.get("/api/testHook", (req, res) => {
   console.log("  client_id: config.client_id,: ", config.client_id);
   console.log(" config.client_secret,: ", config.client_secret);
@@ -175,6 +189,7 @@ app.get("/api/testHook", (req, res) => {
   // res.status(200);
 });
 
+/*
 app.get("/api/getHook", (req, res) => {
   const challenge = req.query["hub.challenge"];
   console.log("req  ", challenge);
@@ -310,7 +325,8 @@ app.delete(
 app.get("/api/sbmt/submission/:password/", (req, res) => {
   console.info(" req.query : ", req.params);
   const { password } = req.params;
-  if (password !== "asdfASDF") {
+  if (password !== config.sbmtPassword) {
+    console.info("sbmt password failed:", password);
     res.sendStatus(403);
   }
 
